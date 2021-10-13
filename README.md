@@ -1,4 +1,6 @@
-### Hi there 👋
+### Hi there 👋, Great to meet you! 😄
+
+I am Konstantinos (Kostas for short), Blockchain Developer from <img src="https://github.com/yammadev/flag-icons/blob/master/png/GR.png?raw=true" width="15"> <b>Greece</b> currently living in <img src="https://github.com/yammadev/flag-icons/blob/master/png/MT@2x.png?raw=true" width="15"/> <b>Malta</b>
 
 <!--
 **konstantinos-giannakakis/konstantinos-giannakakis** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
