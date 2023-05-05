@@ -1,0 +1,39 @@
+# Visit https://github.com/lowlighter/metrics/blob/master/action.yml for full reference
+name: Metrics
+on:
+  # Schedule updates (every 6 hours)
+  schedule: [{cron: "0 */6 * * *"}]
+  # Lines below let you run workflow manually and on each commit
+  workflow_dispatch:
+  push: {branches: ["master", "main"]}
+concurrency: 
+  group: "automated"
+  cancel-in-progress: true
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # Your GitHub token
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # Options
+          user: konstantinos-giannakakis
+          template: classic
+          base: header, activity, repositories, metadata
+          config_timezone: Europe/Vienna
+          plugin_habits: yes
+          plugin_habits_days: 90
+          plugin_habits_facts: yes
+          plugin_habits_from: 200
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          plugin_lines: yes
+          plugin_wakatime: yes
+          plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }} 
+          plugin_wakatime_days: 14
+          plugin_wakatime_limit: 5
+          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
+          plugin_wakatime_url: https://wakatime.com
+          plugin_wakatime_user: current
